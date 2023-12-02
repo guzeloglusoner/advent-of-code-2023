@@ -11,6 +11,9 @@ project/plugins/project/
 .history
 .cache
 .lib/
+.idea/
+.bsp/
+.project/project/
 
 ### Scala template
 *.class
