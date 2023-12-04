@@ -49,9 +49,12 @@ object EngineSchematic extends App {
   private def extractNumberLocations(schematicLine: String, lineNumber: Int): List[NumberLocations] = {
     val pattern = "\\d+".r
     val numbers = pattern.findAllIn(schematicLine).toList
-
+    var globalIndex: Int = 0
     val numLocList = numbers.map(e => {
-      NumberLocations(e.toInt, schematicLine.indexOf(e), lineNumber)
+      val number = e.toInt
+      val startingIndex = schematicLine.indexOf(e, globalIndex)
+      globalIndex = Math.max(globalIndex, startingIndex ) + number.toString.length
+      NumberLocations(number, startingIndex , lineNumber)
     })
 
     numLocList
