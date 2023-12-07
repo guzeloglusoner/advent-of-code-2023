@@ -35,9 +35,11 @@ object PossibleCubes extends App {
       .filter(_.contains(color))
       .map(a => {
         val pattern = ("(\\d+)(?= " + color + ")").r
-        pattern.findFirstIn(a) match
+        val result = pattern.findFirstIn(a)
+        result match {
           case Some(value) => value.toInt
           case None => 0
+        }
       })
 
     numOfCubes.max

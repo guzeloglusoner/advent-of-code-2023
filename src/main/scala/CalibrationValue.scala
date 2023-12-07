@@ -1,6 +1,5 @@
 package org.guzeloglu.application
 
-import scala.Int.*
 import scala.io.Source
 
 object CalibrationValue extends App {

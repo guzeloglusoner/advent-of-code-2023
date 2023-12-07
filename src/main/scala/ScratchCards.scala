@@ -41,7 +41,7 @@ object ScratchCards extends App {
     collection
   })
 
-  private val scratchCardMap: Map[Int, List[Int]] = scratchCardCollection.map(e => (e.card_id, e.copies)).toMap
+  private val scratchCardMap = scratchCardCollection.map(e => (e.card_id, e.copies)).toMap
   println(scratchCardMap)
   import scala.collection.mutable._
 
